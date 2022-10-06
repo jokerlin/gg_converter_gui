@@ -1,7 +1,7 @@
-# Tauri + React + Typescript
+# About
+A GUI to convert Natural8 hand history into Hand2Note supportable format, using Tauri + React + Typescript.
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+# Usage
+Input your directory with your original poker hands' txt files.
+Click "Convert" button and your original poker hands will be converted in 'converted' folder.
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
