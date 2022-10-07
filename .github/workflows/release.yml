@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-latest, windows-latest]
+        platform: [macos-latest, windows-latest]
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -54,12 +54,6 @@ jobs:
 
       # Rust cache
       - uses: Swatinem/rust-cache@v1
-
-      - name: install dependencies (ubuntu only)
-        if: matrix.platform == 'ubuntu-latest'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgtk-3-dev webkit2gtk-4.0 libappindicator3-dev librsvg2-dev patchelf
 
       # Install wasm-pack
       - uses: jetli/wasm-pack-action@v0.3.0
@@ -85,7 +79,7 @@ jobs:
 
       - name: Install app dependencies and build it
         run: yarn && yarn build
-      - uses: tauri-apps/tauri-action@v0.2
+      - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
